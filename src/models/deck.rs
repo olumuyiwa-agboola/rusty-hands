@@ -20,7 +20,7 @@ impl Deck {
         Deck { cards }
     }
 
-    pub fn deal_cards(&mut self, number : u8) -> Vec<Card> {
+    pub fn deal_cards(&mut self, number : usize) -> Vec<Card> {
         let mut cards: Vec<Card> = Vec::new();
 
         for _ in 1..=number {

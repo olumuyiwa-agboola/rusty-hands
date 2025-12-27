@@ -1,6 +1,7 @@
 use models::deck::Deck;
 
 mod models;
+mod tests;
 
 fn main() {
     let mut deck = Deck::new();

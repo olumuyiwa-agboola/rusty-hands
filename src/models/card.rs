@@ -1,6 +1,6 @@
 use crate::models::enums::{Rank, Suit};
 
-#[derive(Debug)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Card {
     pub rank: Rank,
     pub suit: Suit,
