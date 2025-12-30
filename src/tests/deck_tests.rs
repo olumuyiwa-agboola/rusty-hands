@@ -2,7 +2,7 @@ use strum::IntoEnumIterator;
 use crate::models::card::Card;
 use crate::models::deck::Deck;
 use crate::models::enums::Suit;
-use crate::models::enums::Rank;
+use crate::models::enums::CardRank;
 
 #[test]
 fn a_deck_contains_52_cards() {
@@ -18,7 +18,7 @@ fn a_deck_contains_52_cards() {
 
         assert_eq!(suit_cards.len(), 13);
     }
-    for rank in Rank::iter() {
+    for rank in CardRank::iter() {
         let rank_cards: Vec<Card> = deck.cards.iter().filter(|&x| x.rank == rank)
             .cloned()  // Clone the items
             .collect();
