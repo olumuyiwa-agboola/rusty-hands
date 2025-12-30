@@ -27,7 +27,7 @@ impl PreflopHand {
         cards[0].rank == cards[1].rank
     }
 
-    pub fn get_highest_rank(ranks: [&CardRank; 2]) -> CardRank {
+    fn get_highest_rank(ranks: [&CardRank; 2]) -> CardRank {
         let max_rank= ranks.iter()
                                     .map(|x| x.as_u8()).max();
 
