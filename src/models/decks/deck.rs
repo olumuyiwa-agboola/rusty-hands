@@ -1,7 +1,8 @@
 use strum::IntoEnumIterator;
-use crate::models::card::Card;
 use rand::prelude::IndexedRandom;
-use crate::models::enums::{CardRank, Suit};
+use crate::models::cards::card::Card;
+use crate::models::enums::card_rank::CardRank;
+use crate::models::enums::card_suit::CardSuit;
 
 #[derive(Debug)]
 pub struct Deck {
@@ -11,7 +12,7 @@ pub struct Deck {
 impl Deck {
     pub fn new() -> Deck {
         let mut cards: Vec<Card> = Vec::new();
-        for suit in Suit::iter() {
+        for suit in CardSuit::iter() {
             for rank in CardRank::iter() {
                 cards.push(Card::from(rank, suit));
             }

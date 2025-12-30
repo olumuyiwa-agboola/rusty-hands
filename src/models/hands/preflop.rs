@@ -1,5 +1,6 @@
-use crate::models::card::Card;
-use crate::models::enums::{HandRank, CardRank};
+use crate::models::cards::card::Card;
+use crate::models::enums::hand_rank::HandRank;
+use crate::models::enums::card_rank::CardRank;
 
 #[derive(Debug)]
 pub struct PreflopHand {

@@ -1,7 +1,6 @@
-use models::deck::Deck;
+use models::decks::deck::Deck;
 
 mod models;
-mod tests;
 
 fn main() {
     let mut deck = Deck::new();

@@ -1,14 +1,15 @@
-use crate::models::enums::{CardRank, Suit};
+use crate::models::enums::card_suit::CardSuit;
+use crate::models::enums::card_rank::CardRank;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Card {
     pub rank: CardRank,
-    pub suit: Suit,
+    pub suit: CardSuit,
     pub symbol: String,
 }
 
 impl Card {
-    pub fn from(rank: CardRank, suit: Suit) -> Card {
+    pub fn from(rank: CardRank, suit: CardSuit) -> Card {
         Card {
             symbol: Self::get_symbol(&rank, &suit),
             rank,
@@ -16,7 +17,7 @@ impl Card {
         }
     }
 
-    fn get_symbol(rank: &CardRank, suit: &Suit) -> String {
+    fn get_symbol(rank: &CardRank, suit: &CardSuit) -> String {
         let mut symbol = String::from("");
         match rank {
             CardRank::Ace => symbol.push('A'),
@@ -35,10 +36,10 @@ impl Card {
         };
 
         match suit {
-            Suit::Spades => symbol.push_str("♠️"),
-            Suit::Hearts => symbol.push_str("♥️"),
-            Suit::Diamonds => symbol.push_str("♦️"),
-            Suit::Clubs => symbol.push_str("♣️"),
+            CardSuit::Spades => symbol.push_str("♠️"),
+            CardSuit::Hearts => symbol.push_str("♥️"),
+            CardSuit::Diamonds => symbol.push_str("♦️"),
+            CardSuit::Clubs => symbol.push_str("♣️"),
         };
 
         symbol

@@ -1,13 +1,5 @@
 use strum_macros::EnumIter;
 
-#[derive(Debug, EnumIter, Clone, Copy, PartialEq)]
-pub enum Suit {
-    Spades,
-    Hearts,
-    Diamonds,
-    Clubs
-}
-
 #[derive(Debug, EnumIter, PartialEq, Clone)]
 pub enum CardRank {
     Ace,
@@ -62,18 +54,4 @@ impl CardRank {
             _ => None
         }
     }
-}
-
-#[derive(Debug, PartialEq)]
-pub enum HandRank {
-    HighCard(CardRank),
-    Pair,
-    TwoPair,
-    ThreeOfAKind,
-    Straight,
-    Flush,
-    FullHouse,
-    FourOfAKind,
-    StraightFlush,
-    RoyalFlush,
 }

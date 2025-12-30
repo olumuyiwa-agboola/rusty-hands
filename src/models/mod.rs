@@ -1,4 +1,4 @@
-pub mod card;
+pub mod hands;
+pub mod cards;
+pub mod decks;
 pub mod enums;
-pub mod deck;
-pub mod hand;
