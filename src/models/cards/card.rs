@@ -3,12 +3,24 @@ use crate::models::enums::card_rank::CardRank;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Card {
-    pub rank: CardRank,
-    pub suit: CardSuit,
-    pub symbol: String,
+    rank: CardRank,
+    suit: CardSuit,
+    symbol: String,
 }
 
 impl Card {
+    pub fn rank(&self) -> &CardRank {
+        &self.rank
+    }
+
+    pub fn suit(&self) -> &CardSuit {
+        &self.suit
+    }
+
+    pub fn symbol(&self) -> &String {
+        &self.symbol
+    }
+
     pub fn from(rank: CardRank, suit: CardSuit) -> Card {
         Card {
             symbol: Self::get_symbol(&rank, &suit),

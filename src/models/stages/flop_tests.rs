@@ -11,6 +11,6 @@ fn a_flop_stage_takes_three_cards_from_a_deck() {
 
     // Assert
     assert_eq!(flop.cards.len(), 3);
-    assert_eq!(deck.cards.len(), 49);
-    assert!(!flop.cards.iter().any(|x| deck.cards.contains(x)));
+    assert_eq!(deck.cards().len(), 49);
+    assert!(!flop.cards.iter().any(|x| deck.cards().contains(x)));
 }

@@ -6,10 +6,14 @@ use crate::models::enums::card_suit::CardSuit;
 
 #[derive(Debug)]
 pub struct Deck {
-    pub cards: Vec<Card>,
+    cards: Vec<Card>,
 }
 
 impl Deck {
+    pub fn cards(&mut self) -> &mut Vec<Card> {
+        &mut self.cards
+    }
+
     pub fn new() -> Deck {
         let mut cards: Vec<Card> = Vec::new();
         for suit in CardSuit::iter() {
@@ -30,7 +34,7 @@ impl Deck {
 
             match random_card {
                 Some(card) => {
-                    if let Some(index) = self.cards.iter().position(|x| x.suit == card.suit && x.rank == card.rank) {
+                    if let Some(index) = self.cards.iter().position(|x| x.suit() == card.suit() && x.rank() == card.rank()) {
                         let random_card_from_deck = self.cards.remove(index);
                         cards.push(random_card_from_deck);
                     };
