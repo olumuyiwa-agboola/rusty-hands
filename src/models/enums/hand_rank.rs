@@ -1,6 +1,6 @@
 use crate::models::enums::card_rank::CardRank;
 
-#[derive(Debug, PartialEq)]
+#[derive(PartialEq, Debug)]
 pub enum HandRank {
     HighCard(CardRank),
     Pair,
