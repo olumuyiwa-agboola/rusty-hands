@@ -3,7 +3,6 @@ use crate::models::decks::deck::Deck;
 use crate::models::enums::hand_rank::HandRank;
 use crate::models::enums::card_rank::CardRank;
 
-#[derive(Debug)]
 pub struct PreflopHand {
     cards: [Card; 2],
     rank: HandRank
@@ -22,9 +21,8 @@ impl PreflopHand {
         let cards: [Card; 2] = deck.deal_cards(2).try_into().unwrap();
 
         let rank: HandRank;
-        let hand_is_pair = Self::is_pair([&cards[0], &cards[1]]);
 
-        if hand_is_pair {
+        if Self::is_pair([&cards[0], &cards[1]]) {
             rank = HandRank::Pair
         }else {
             let highest_rank = Self::get_highest_rank([&cards[0].rank(), &cards[1].rank()]);
